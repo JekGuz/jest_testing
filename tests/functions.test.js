@@ -119,15 +119,15 @@ describe("climbStairs", () => {
 });
 
 describe('deleteDuplicates (sorted linked list)', () => {
-    const cases = [
+    duplicatesArray = [
         [[1, 1, 2], [1, 2]],
         [[1, 1, 2, 3, 3], [1, 2, 3]],
         [[1], [1]],                  // один элемент
         [[1, 1, 1, 1], [1]],         // все одинаковые
     ];
 
-    cases.forEach(([input, expected]) => {
-        test(`from ${JSON.stringify(input)} → ${JSON.stringify(expected)}`, () => {
+    duplicatesArray.forEach(([input, expected]) => {
+        test(`from ${JSON.stringify(input)} -> ${JSON.stringify(expected)}`, () => {
             const head = fromArray(input);
             const cleaned = deleteDuplicates(head);
             expect(toArray(cleaned)).toEqual(expected);
@@ -137,7 +137,7 @@ describe('deleteDuplicates (sorted linked list)', () => {
 
 
 describe('isSymmetric (binary tree)', () => {
-    const cases = [
+    symmetricArray = [
         [[1, 2, 2, 3, 4, 4, 3], true],             // пример 1
         [[1, 2, 2, null, 3, null, 3], false],      // пример 2
         [[1], true],                         // один узел — симметрично
@@ -145,8 +145,8 @@ describe('isSymmetric (binary tree)', () => {
         [[1, 2, 2, 3, null, null, 3, 4], false],    // асимметрия глубже
     ];
 
-    cases.forEach(([arr, expected]) => {
-        test(`Tree ${JSON.stringify(arr)} → ${expected}`, () => {
+    symmetricArray.forEach(([arr, expected]) => {
+        test(`Tree ${JSON.stringify(arr)} -> ${expected}`, () => {
             const root = treeFromArray(arr);
             expect(isSymmetric(root)).toBe(expected);
         });
